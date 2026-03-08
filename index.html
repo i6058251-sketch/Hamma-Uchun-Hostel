@@ -1,94 +1,162 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel Hamma Uchun — Ташкент</title>
-    <style>
-        /* Основные настройки, чтобы сайт был на весь экран */
-        body, html { 
-            margin: 0; padding: 0; height: 100%; 
-            font-family: 'Segoe UI', sans-serif; 
-            background: #001529; color: white;
-        }
-        
-        /* Шапка с логотипом */
-        header { background: white; padding: 20px; text-align: center; }
-        header img { max-width: 280px; height: auto; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Огромный главный блок (Hero) */
-        .hero { 
-            height: 70vh; /* Занимает 70% высоты экрана */
-            display: flex; flex-direction: column; 
-            justify-content: center; align-items: center;
-            background: linear-gradient(rgba(0,21,41,0.8), rgba(0,21,41,0.8)), 
-                        url('https://images.unsplash.com/photo-1555854817-5b2738a77fd5?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            text-align: center; border-bottom: 5px solid #27ae60;
-        }
-        .hero h1 { font-size: 4em; margin: 0; text-transform: uppercase; }
-        .hero p { font-size: 1.8em; color: #27ae60; font-weight: bold; margin-top: 20px; }
+<title>Hostel Hamma Uchun — Ташкент</title>
 
-        /* Секция с услугами (2 этажа, компьютеры, локеры) */
-        .services { padding: 80px 20px; max-width: 1200px; margin: auto; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { 
-            background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; 
-            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
-        }
-        .card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.1); }
-        .card h3 { color: #27ae60; font-size: 2em; margin-bottom: 15px; }
-        .card p { font-size: 1.2em; line-height: 1.6; opacity: 0.9; }
+<style>
 
-        /* Блок контактов внизу */
-        .contact-section { background: white; color: #001529; padding: 60px 20px; text-align: center; }
-        .btn { 
-            display: inline-block; background: #27ae60; color: white; 
-            padding: 20px 50px; text-decoration: none; border-radius: 50px; 
-            font-weight: bold; font-size: 1.5em; margin-top: 20px;
-        }
-        .phone { font-size: 2.2em; display: block; margin: 20px 0; color: #001529; font-weight: bold; text-decoration: none; }
-        
-        footer { padding: 40px; opacity: 0.5; text-align: center; font-size: 1em; }
-    </style>
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:#001529;
+color:white;
+text-align:center;
+}
+
+header{
+background:white;
+padding:20px;
+}
+
+header img{
+width:200px;
+}
+
+.hero{
+height:70vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(rgba(0,21,41,0.7),rgba(0,21,41,0.7)),
+url("https://images.unsplash.com/photo-1555854817-5b2738a77fd5");
+
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:50px;
+margin:0;
+}
+
+.hero p{
+font-size:24px;
+color:#27ae60;
+margin-top:15px;
+}
+
+.services{
+padding:60px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:15px;
+}
+
+.card h3{
+color:#27ae60;
+}
+
+.contact{
+background:white;
+color:#001529;
+padding:50px 20px;
+}
+
+.phone{
+font-size:28px;
+display:block;
+margin:15px 0;
+text-decoration:none;
+color:#001529;
+font-weight:bold;
+}
+
+.btn{
+display:inline-block;
+background:#27ae60;
+color:white;
+padding:15px 40px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+padding:30px;
+opacity:0.6;
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <img src="Logo.png" alt="Hamma Uchun Logo">
-    </header>
+<header>
+<img src="logo.png" alt="Hostel Logo">
+</header>
 
-    <section class="hero">
-        <h1>Hostel "Hamma Uchun"</h1>
-        <p>"Bizda xona emas — muhit bor!"</p>
-    </section>
+<section class="hero">
+<h1>Hostel "Hamma Uchun"</h1>
+<p>Bizda xona emas — muhit bor!</p>
+</section>
 
-    <section class="services">
-        <div class="grid">
-            <div class="card">
-                <h3>🏢 2 Этажа</h3>
-                <p>Просторное двухэтажное здание в самом центре Ташкента. У нас уютно, чисто и много места для каждого гостя.</p>
-            </div>
-            <div class="card">
-                <h3>💻 IT-зона</h3>
-                <p>Современные компьютеры и скоростной Wi-Fi. Идеально для тех, кто работает удаленно или учится.</p>
-            </div>
-            <div class="card">
-                <h3>🔐 Локеры</h3>
-                <p>Ваши вещи под надежной защитой. Каждому гостю предоставляется личный шкафчик с индивидуальным ключом.</p>
-            </div>
-        </div>
-    </section>
+<section class="services">
 
-    <section class="contact-section">
-        <h2>Забронируйте место прямо сейчас</h2>
-        <a href="tel:+998991196815" class="phone">📞 +998 99 119 68 15</a>
-        <a href="https://t.me/+998991196815" class="btn">Написать в Telegram</a>
-    </section>
+<div class="grid">
 
-    <footer>
-        <p>© 2026 Hostel "Hamma Uchun" | Ташкент, Узбекистан</p>
-    </footer>
+<div class="card">
+<h3>🛌 2 Этажа</h3>
+<p>Просторное двухэтажное кровать.</p>
+</div>
+
+<div class="card">
+<h3>💻 IT зона</h3>
+<p>Компьютеры и быстрый Wi-Fi для работы и учебы.</p>
+</div>
+
+<div class="card">
+<h3>🔐 Локеры</h3>
+<p>Безопасные шкафчики для личных вещей.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>Забронируйте место</h2>
+
+<a href="tel:+998991196815" class="phone">
+📞 +998 99 119 68 15
+</a>
+
+<a href="https://t.me/+998991196815" class="btn">
+Написать в Telegram
+</a>
+
+</section>
+
+<footer>
+© 2026 Hostel "Hamma Uchun" | Ташкент
+</footer>
 
 </body>
 </html>
