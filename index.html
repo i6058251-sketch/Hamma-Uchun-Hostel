@@ -3,112 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel Hamma Uchun — Ташкент</title>
+    <title>Hostel Hamma Uchun — Лучший хостел в Ташкенте</title>
     <style>
+        :root {
+            --primary: #001529;
+            --accent: #27ae60;
+            --text-light: #f4f7f6;
+        }
         body { 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            text-align: center; 
-            /* Добавляем стильный темный фон */
-            background: #001a33; 
-            color: white; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; padding: 0; line-height: 1.6; color: #333;
+            background: #f0f2f5; 
         }
+        
+        /* Шапка сайта */
         header { 
-            background: white; 
-            padding: 20px; 
-            border-bottom: 4px solid #27ae60; 
+            background: white; padding: 15px 0; 
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        header img { max-width: 250px; height: auto; }
-        
+        header img { max-width: 220px; display: block; margin: 0 auto; }
+
+        /* Главный баннер */
         .hero { 
-            padding: 60px 20px; 
-            background: linear-gradient(rgba(0,26,51,0.8), rgba(0,26,51,0.8)), url('https://images.unsplash.com/photo-1555854817-5b2738a77fd5?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 21, 41, 0.85), rgba(0, 21, 41, 0.85)), 
+                        url('https://images.unsplash.com/photo-1555854817-5b2738a77fd5?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: white; padding: 120px 20px; text-align: center;
         }
-        .hero h1 { font-size: 3em; margin: 0; color: #fff; }
-        .hero p { font-size: 1.5em; color: #27ae60; font-weight: bold; margin-top: 10px; }
+        .hero h1 { font-size: 4em; margin: 0; letter-spacing: 2px; text-transform: uppercase; }
+        .hero p { font-size: 1.8em; color: var(--accent); font-weight: 300; margin-top: 20px; font-style: italic; }
 
-        .container { padding: 40px 20px; max-width: 1000px; margin: auto; }
-        
-        .box { 
-            background: rgba(255, 255, 255, 0.1); 
-            padding: 25px; 
-            margin: 10px; 
-            border-radius: 15px; 
-            backdrop-filter: blur(5px);
-            display: inline-block; 
-            width: 280px; 
-            vertical-align: top;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .box h3 { color: #27ae60; margin-top: 0; }
+        /* Секция преимуществ */
+        .section { padding: 80px 20px; max-width: 1200px; margin: auto; text-align: center; }
+        .section-title { font-size: 2.5em; color: var(--primary); margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent); margin: 15px auto; }
 
-        .booking { 
-            margin-top: 50px; 
-            background: white; 
-            padding: 40px; 
-            border-radius: 20px; 
-            color: #333;
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { 
+            background: white; padding: 40px; border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;
+            border-bottom: 5px solid transparent;
         }
-        .btn { 
-            display: inline-block; 
-            background: #27ae60; 
-            color: white; 
-            padding: 20px 40px; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            font-size: 1.3em; 
-            margin-top: 20px; 
+        .card:hover { transform: translateY(-15px); border-bottom: 5px solid var(--accent); }
+        .card h3 { font-size: 1.8em; color: var(--primary); margin-bottom: 15px; }
+        .card p { font-size: 1.1em; color: #666; }
+
+        /* Большая текстовая секция */
+        .about-us { background: var(--primary); color: white; padding: 100px 20px; text-align: center; }
+        .about-content { max-width: 800px; margin: auto; font-size: 1.2em; opacity: 0.9; }
+
+        /* Контакты */
+        .contact-box { 
+            background: white; padding: 60px; border-radius: 30px; 
+            box-shadow: 0 15px-50px rgba(0,0,0,0.1); margin-top: -50px;
+            position: relative; z-index: 10;
         }
-        .phone { 
-            font-size: 1.8em; 
-            display: block; 
-            margin: 20px 0; 
-            color: #001a33; 
-            text-decoration: none; 
-            font-weight: bold; 
+        .phone-link { 
+            font-size: 2.5em; color: var(--primary); text-decoration: none; 
+            font-weight: bold; display: block; margin: 30px 0;
         }
-        footer { padding: 30px; opacity: 0.6; font-size: 0.9em; }
+        .tg-btn { 
+            display: inline-block; background: var(--accent); color: white; 
+            padding: 22px 60px; text-decoration: none; border-radius: 100px; 
+            font-weight: bold; font-size: 1.5em; transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.4);
+        }
+        .tg-btn:hover { background: #219150; transform: scale(1.05); }
+
+        footer { padding: 60px; background: #eee; color: #777; font-size: 1.1em; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .phone-link { font-size: 1.8em; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo.png" alt="Hamma Uchun Logo">
+        <img src="logo.png" alt="Hostel Hamma Uchun">
     </header>
 
-    <div class="hero">
+    <section class="hero">
         <h1>Hostel "Hamma Uchun"</h1>
         <p>"Bizda xona emas — muhit bor!"</p>
-    </div>
+    </section>
 
-    <div class="container">
-        <div class="box">
-            <h3>🏢 2 Этажа</h3>
-            <p>Большое и уютное здание. Места хватит для каждого гостя!</p>
+    <section class="section">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🏢 2 Этажа комфорта</h3>
+                <p>Наш хостел расположен в просторном двухэтажном здании. Мы разделили зоны так, чтобы каждый гость чувствовал себя свободно. Просторные холлы, высокие потолки и идеальная чистота на каждом этаже.</p>
+            </div>
+            <div class="card">
+                <h3>💻 IT и Рабочая зона</h3>
+                <p>Мы понимаем, как важна связь. У нас установлены современные компьютеры с доступом в интернет. Высокоскоростной Wi-Fi покрывает всё здание, позволяя вам работать или учиться с комфортом.</p>
+            </div>
+            <div class="card">
+                <h3>🔐 Безопасность (Локеры)</h3>
+                <p>Ваше спокойствие — наш приоритет. Каждому гостю предоставляется индивидуальный шкафчик (локер) с надежным замком. Храните документы, технику и личные вещи под защитой 24/7.</p>
+            </div>
         </div>
-        <div class="box">
-            <h3>💻 IT-зона</h3>
-            <p>Мощные компьютеры и стабильный Wi-Fi для вашей работы.</p>
-        </div>
-        <div class="box">
-            <h3>🔐 Локеры</h3>
-            <p>Индивидуальные шкафчики с ключами для полной безопасности.</p>
-        </div>
+    </section>
 
-        <div class="booking">
-            <h2>Забронировать прямо сейчас</h2>
-            <p>Ташкент | Работаем 24/7</p>
-            <a href="tel:+998991196815" class="phone">📞 +998 99 119 68 15</a>
-            <a href="https://t.me/+998991196815" class="btn">Написать в Telegram</a>
+    <section class="about-us">
+        <div class="about-content">
+            <h2 style="color: var(--accent); font-size: 2.5em;">Почему выбирают именно нас?</h2>
+            <p>Хостел "Hamma Uchun" в Ташкенте — это не просто место для ночлега. Это сообщество единомышленников, где создана атмосфера домашнего уюта и взаимоуважения.</p>
+            <p>Мы находимся в удобной локации, обеспечиваем ежедневную уборку и следим за тем, чтобы каждый гость чувствовал себя как дома. Независимо от того, приехали вы по делам или как турист — у нас вам всегда рады!</p>
         </div>
-    </div>
+    </section>
 
-    <footer>
+    <section class="section">
+        <div class="contact-box">
+            <h2 style="font-size: 2em;">Забронируйте ваше место сегодня!</h2>
+            <p>Мы работаем без выходных и перерывов. Самые доступные цены в городе.</p>
+            <a href="tel:+998991196815" class="phone-link">📞 +998 99 119 68 15</a>
+            <a href="https://t.me/+998991196815" class="tg-btn">Связаться в Telegram</a>
+        </div>
+    </section>
+
+    <footer style="text-align: center;">
         <p>© 2026 Hostel "Hamma Uchun" | Ташкент, Узбекистан</p>
+        <p>Ваше уютное место в самом сердце столицы.</p>
     </footer>
 
 </body>
